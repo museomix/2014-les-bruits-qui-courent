@@ -37,7 +37,7 @@ class Serial:
 
     def get_distance(self):
         input_ = self.ser.readline()[:-1]
-        print input_
+#        print input_
         match = self.parser.match(input_)
         if not match:
             return self.distances
@@ -50,11 +50,11 @@ class Serial:
         return self.distances
 
     def __gt__(self, than):
-        print "gt"
+        #print "gt"
         return all(d>than for d in self.distances)
 
     def __lt__(self, than):
-        print "lt"
+#        print "lt"
         return all(d<than for d in self.distances)
 
 
