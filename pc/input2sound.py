@@ -60,17 +60,11 @@ class Serial:
 
 if __name__ == "__main__":
     # INIT SOUNDS
-    mixer.init(frequency=44100, channels=3)
-    tic_tac = Sound(0, "tic_tac.wav")
-    machine = Sound(1, "machine_ecrire.wav")
-    text = Sound(2, "dialogue_horloge.wav")
-    tic_tac.channel.set_volume(0.05)
-    machine.channel.set_volume(0.1)
+    mixer.init(frequency=44100, channels=2)
+    text = Sound(0, "/usr/share/vacarme/dialogue_horloge.wav")
     
     # INIT SERIAL
-    ser = Serial('/dev/ttyACM0')    
-    
-    tic_tac.play(loops=-1)
+    ser = Serial('/dev/ttyACM0')
     
     text_pause = 0
 
@@ -78,12 +72,7 @@ if __name__ == "__main__":
     
         distances = ser.get_distance()
     
-        if ser<140 and not machine.playing:
-            print "start machine"
-            machine.play(loops=-1)
-            tic_tac.pause()
-    
-        if ser<100 and not text.playing:
+        if ser<140 and not text.playing:
             print "start playing %d", time.time() - text_pause
             if time.time() - text_pause < 10:
                 text.unpause()
@@ -92,10 +81,8 @@ if __name__ == "__main__":
                 text.play()
             
     
-        if ser>150 and machine.playing:
-            print "stop machine"
-            machine.stop()
+        if ser>150 and text.playing:
+            print "stop text"
             text.pause()
-            tic_tac.unpause()
             text_pause = time.time()
 
