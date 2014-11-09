@@ -31,8 +31,8 @@ class Sound:
 class Serial:
     parser = re.compile(r"<(True|False):([0-9]+)>")
     def  __init__(self, serial_name):
-        self.ser = open("test.ser")
-        #self.ser = serial.Serial(serial_name, 9600)
+        #self.ser = open("test.ser")
+        self.ser = serial.Serial(serial_name, 9600)
         self.distances = []
 
     def get_distance(self):
