@@ -1,2 +1,15 @@
-2014-les-bruits-qui-courent
-===========================
+Procédure de démarrage
+==================
+
+Matériel
+==================
+
+## Emprunté à la tech-shop
+
+* ???
+* ???
+
+
+Procédure d'installation
+==================
+
