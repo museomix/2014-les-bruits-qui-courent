@@ -1,0 +1,12 @@
+[Unit]
+Description=Input2Sound
+After=
+
+[Service]
+Type=simple
+User=vacarme
+TimeoutStartSec=0
+ExecStart=/usr/bin/input2sound.py
+
+[Install]
+WantedBy=basic.target
