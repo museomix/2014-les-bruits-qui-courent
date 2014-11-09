@@ -84,8 +84,8 @@ if __name__ == "__main__":
             tic_tac.pause()
     
         if ser<100 and not text.playing:
-            print "start playing"
-            if time.time() - text_pause < 5:
+            print "start playing %d", time.time() - text_pause
+            if time.time() - text_pause < 10:
                 text.unpause()
             else:
                 text.stop()
