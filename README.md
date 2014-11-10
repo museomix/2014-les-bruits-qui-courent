@@ -8,7 +8,6 @@ Procédure de démarrage
 * Haut-parleurs directif + ampli
 * Mini-pc + alim
 * Capteur ultrason + arduino
-* Lecteur mp3
 
 
 #Procédure d'installation
@@ -36,6 +35,7 @@ Il y a deux système indépendant :
 
 #### Mise en place du "tic-tac"
 
+- (Trouver un lecteur audio, y installer le son tic_tac.wav)
 - Brancher les haut-parleurs directifs au lecteur mp3.
 - Lancer le son sur le lecteur mp3.
 - S'assurer que le son est joué en boucle.
@@ -62,7 +62,7 @@ Ces informations seront principalement nécessaire à quelqu'un voulant modifier
 
 - L'arduino envoie les informations des capteurs sur un port serie via le cable usb.
 - Le script python input2sound.py lit le port série et joue le son en fonction de la distance mesurée.
-- L'utilisateur lançant le script input2sound.py doit être dans le group "dialout".
+- L'utilisateur lançant le script input2sound.py (vacarme dans notre cas) doit être dans le group "dialout".
 - Le script est automatiquement lancé au démmarage grace à un script systemd.
 
 
